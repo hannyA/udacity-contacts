@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class ContactList extends Component {
+  render() {
+    const people = [
+      { name: 'Tyler'},
+      { name: 'Karen'},
+      { name: 'Richard'}
+    ]
+  
+    return <ol>
+      {people.map((person) => (
+        <li key={person.name}>{person.name}</li>
+      ))}
+    </ol>
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <ContactList />
+    )
+  }
 }
 
 export default App;
